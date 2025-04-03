@@ -1,0 +1,49 @@
+/*
+THANK YOU VERY MUCH CODE REVIEWER,
+YOUR EFFORT MAKE ME BETTER!!! */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+}
+
+.card__description {
+  display: flex;
+  background-color: white;
+  color: black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 0 0 10px 10px;
+}
+.card__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0;
+  max-width: 220px;
+}
+
+.card__like-button {
+  background: transparent url(../images/like-button.svg);
+  width: 21px;
+  height: 18px;
+  border: none;
+}
+
+.card__like-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

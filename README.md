@@ -32,6 +32,10 @@ This project was very diifuclt for me personally because its huge step forward a
 
 - [link to the project on github pages](https://michael71161.github.io/se_project_aroundtheus/)
 
+**Link for live review video**
+
+-[link for review video](https://drive.google.com/file/d/1WS8m2BrwnDxFmZkUE9XObExTfe3rS2GY/view?usp=drive_link)
+
 **Images**
 
 Images used:
