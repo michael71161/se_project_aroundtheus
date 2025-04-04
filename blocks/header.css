@@ -5,6 +5,10 @@
 
 .header {
   box-sizing: border-box;
+  max-width: 880px;
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 40px);
   padding-top: 45px;
   padding-bottom: 41px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
@@ -16,6 +20,10 @@
     max-height: 24px;
   }
   .header {
-    padding-left: 7px;
+    padding-left: 27px;
+    padding-top: 28px;
+    padding-bottom: 32px;
+    width: 100%;
+    max-width: 100%;
   }
 }

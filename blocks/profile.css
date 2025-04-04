@@ -49,6 +49,10 @@
   text-wrap: nowrap;
   margin: 0;
   padding: 0;
+  text-overflow: ellipsis; /*Thank you code reviewer*/
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 375px;
 }
 
 .profile__description {
@@ -57,6 +61,10 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 380px;
 }
 
 .profile__image {
@@ -100,5 +108,10 @@
   .profile__add-button {
     margin: 0;
     width: 100%;
+  }
+
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
   }
 }
