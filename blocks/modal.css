@@ -42,21 +42,6 @@
   /* margin-top: 34px; */
 }
 
-.form__input {
-  display: block;
-  width: 358px;
-  margin-bottom: 38px;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.form__input::placeholder {
-  color: black;
-  font-weight: 400;
-  font-size: 14px;
-  margin-bottom: 13px;
-}
-
 .modal__button {
   width: 358px;
   background-color: black;
@@ -85,10 +70,6 @@
     font-size: 18px;
     line-height: 100%;
     margin-bottom: 75px;
-  }
-  .form__input {
-    width: 238px;
-    margin-bottom: 35px;
   }
 
   .modal__button {
