@@ -28,3 +28,23 @@ const initialCards = [
 ];
 
 console.log(initialCards);
+
+const profileEditButton = document.querySelector(
+  "#profile-edit-button"
+); /*because we used id*/
+
+const profileEditModal = document.querySelector("#profile-edit-modal");
+console.log(profileEditButton);
+
+const profileEditModalClose = document.querySelector("#profile-edit-close");
+console.log(profileEditModalClose); /*we selecting the close modal button*/
+
+profileEditButton.addEventListener("click", () => {
+  profileEditModal.classList.add(
+    "modal__opened"
+  ); /*adding class for the modal to make it open, class modal opened*/
+}); /*"click" is the event second argument is function*/
+
+profileEditModalClose.addEventListener("click", () => {
+  profileEditModal.classList.remove("modal__opened");
+});
