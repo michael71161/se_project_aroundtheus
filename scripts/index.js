@@ -73,7 +73,7 @@ console.log(cardTemplate);
 /* functions */
 
 function closepopup() {
-  profileEditModal.classList.remove("modal__opened");
+  profileEditModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -106,7 +106,7 @@ profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   profileEditModal.classList.add(
-    "modal__opened"
+    "modal_opened"
   ); /*adding class for the modal to make it open, class modal opened*/
 }); /*"click" is the event second argument is function*/
 
