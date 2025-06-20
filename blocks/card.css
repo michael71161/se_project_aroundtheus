@@ -6,6 +6,7 @@ YOUR EFFORT MAKE ME BETTER!!! */
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  position: relative;
 }
 
 .card__image {
@@ -43,7 +44,28 @@ YOUR EFFORT MAKE ME BETTER!!! */
   border: none;
 }
 
+.card__like-button_active {
+  background-image: url(../images/like_clicked.svg);
+}
+
 .card__like-button:hover {
   opacity: 0.5;
+  cursor: pointer;
+}
+
+.card__delete-button {
+  background: transparent url(../images/delete_button.svg) center no-repeat;
+  background-size: 18px 19px;
+  width: 18px;
+  height: 19px;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.card__delete-button:hover {
+  opacity: 0.6;
   cursor: pointer;
 }

@@ -39,6 +39,15 @@ console.log(profileEditButton);
 const profileEditModalClose = document.querySelector("#profile-edit-close");
 console.log(profileEditModalClose); /*we selecting the close modal button*/
 
+/*add card*/
+const addCardModal = document.querySelector("#add-card-modal");
+const addCardButton = document.querySelector("#add-card-button");
+
+/*add card close button*/
+const addCardCloseButton = document.querySelector("#add-card-close");
+
+const addCardSubmitButton = document.querySelector("#submit-image");
+
 /*now we want to grab profile info (title and description)*/
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
@@ -53,6 +62,11 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
+
+/*we grabbing add card inputs*/
+
+const cardTitleInput = document.querySelector("#card-title-input");
+const cardLinkInput = document.querySelector("#card-link-input");
 
 /*now we want that from the modal it will go yo the html, to edit our form*/
 
@@ -80,6 +94,16 @@ function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-button");
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
   console.log(cardImageEl);
   cardImageEl.src = cardData.link;
   cardTitleEl.textContent = cardData.name;
@@ -92,6 +116,15 @@ function handleProfileEditSUbmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closepopup();
+}
+
+function handleAddCardSubmit() {
+  const newCard = getCardElement({
+    link: cardLinkInput.value,
+    name: cardTitleInput.value,
+  });
+  cardListEL.append(newCard);
+  addCardModal.classList.remove("modal_opened");
 }
 
 /* event listeners*/
@@ -109,6 +142,21 @@ profileEditButton.addEventListener("click", () => {
     "modal_opened"
   ); /*adding class for the modal to make it open, class modal opened*/
 }); /*"click" is the event second argument is function*/
+
+/*open the add card modal*/
+addCardButton.addEventListener("click", () => {
+  addCardModal.classList.add("modal_opened");
+});
+
+addCardSubmitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleAddCardSubmit();
+});
+
+/*close the add card modal*/
+addCardCloseButton.addEventListener("click", () => {
+  addCardModal.classList.remove("modal_opened");
+});
 
 profileEditModalClose.addEventListener("click", closepopup);
 
