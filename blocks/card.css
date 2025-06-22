@@ -1,7 +1,3 @@
-/*
-THANK YOU VERY MUCH CODE REVIEWER,
-YOUR EFFORT MAKE ME BETTER!!! */
-
 .card {
   display: flex;
   flex-direction: column;
@@ -12,6 +8,11 @@ YOUR EFFORT MAKE ME BETTER!!! */
 .card__image {
   width: 282px;
   height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card__image:hover {
+  cursor: pointer;
 }
 
 .card__description {

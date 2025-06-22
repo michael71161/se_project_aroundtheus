@@ -7,14 +7,18 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   padding: 0 19px;
-  /*display: flex;*/
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
 }
 
 .modal_opened {
   display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal__container {
@@ -59,8 +63,6 @@
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
-/*25 22*/
-/*282 322*/
 
 .modal__close:hover {
   background-image: url("../images/close-icon-hover.svg");

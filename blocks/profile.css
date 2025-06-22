@@ -49,7 +49,7 @@
   text-wrap: nowrap;
   margin: 0;
   padding: 0;
-  text-overflow: ellipsis; /*Thank you code reviewer*/
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 375px;
