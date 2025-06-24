@@ -71,7 +71,7 @@
       <div class="modal__container">
         <button class="modal__close" type="button" id="add-card-close"></button>
         <p class="modal__heading">New Place</p>
-        <form class="modal__form" id="add-card-modal">
+        <form class="modal__form" id="add-card-form">
           <input
             type="text"
             class="modal__input"
@@ -87,22 +87,22 @@
             placeholder="Image link"
           />
           <button type="submit" class="modal__button" id="submit-image">
-            Save
+            Create
           </button>
         </form>
       </div>
     </div>
     <!--image modal -->
-    <div class="image__modal" id="image-modal">
-      <div class="image__modal_container">
-        <figure class="image__modal_figure">
+    <div class="modal" id="image-modal">
+      <div class="modal__container modal__container_type_image">
+        <figure class="modal__figure">
           <button
             class="modal__close"
             type="button"
             id="image-modal-close"
           ></button>
-          <img src="" alt="" class="image__modal_image" />
-          <figcaption class="image__modal_caption"></figcaption>
+          <img src="" alt="" class="modal__image" />
+          <figcaption class="modal__caption"></figcaption>
         </figure>
       </div>
     </div>
