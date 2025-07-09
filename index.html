@@ -11,8 +11,8 @@
     <div class="page__content">
       <header class="header">
         <img src="./images/Vector.svg" alt="logo" class="header__image" />
-        <!-- <p class="header__divider"></p> -->
       </header>
+
       <main class="content">
         <section class="profile page__section">
           <img src="./images/Avatar.png" alt="avatar" class="profile__image" />
@@ -31,14 +31,18 @@
             id="add-card-button"
           ></button>
         </section>
+
         <section class="cards page__section">
           <ul class="cards__list"></ul>
         </section>
       </main>
+
       <footer class="footer page__section">
-        <p class="footer__copyright">&copy; 2022 Around The US</p>
+        <p class="footer__copyright">&copy; 2025 Around The US</p>
       </footer>
     </div>
+
+    <!-- Edit Profile Modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button
@@ -47,52 +51,75 @@
           id="profile-edit-close"
         ></button>
         <p class="modal__heading">Edit Profile</p>
-        <form class="modal__form">
+        <form class="popup__form">
           <input
             type="text"
             class="modal__input"
-            name="title"
+            name="name"
             id="profile-title-input"
             placeholder="Name"
+            required
+            minlength="2"
+            maxlength="40"
           />
+          <span id="profile-title-input-error" class="popup__error"></span>
+
           <input
             type="text"
             class="modal__input"
-            name="description"
+            name="about"
             id="profile-description-input"
-            placeholder="Description"
+            placeholder="About"
+            required
+            minlength="2"
+            maxlength="200"
           />
+          <span
+            id="profile-description-input-error"
+            class="popup__error"
+          ></span>
+
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
     </div>
-    <!--add card modal-->
+
+    <!-- Add Card Modal -->
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
         <button class="modal__close" type="button" id="add-card-close"></button>
         <p class="modal__heading">New Place</p>
-        <form class="modal__form" id="add-card-form">
+        <form class="popup__form" id="add-card-form">
           <input
             type="text"
             class="modal__input"
             name="title"
             id="card-title-input"
             placeholder="Title"
+            required
+            minlength="1"
+            maxlength="30"
           />
+          <span id="card-title-input-error" class="popup__error"></span>
+
           <input
-            type="text"
+            type="url"
             class="modal__input"
-            name="url"
+            name="link"
             id="card-link-input"
             placeholder="Image link"
+            required
           />
+          <span id="card-link-input-error" class="popup__error"></span>
+
           <button type="submit" class="modal__button" id="submit-image">
             Create
           </button>
         </form>
       </div>
     </div>
-    <!--image modal -->
+
+    <!-- Image Modal -->
     <div class="modal" id="image-modal">
       <div class="modal__container modal__container_type_image">
         <figure class="modal__figure">
@@ -106,6 +133,8 @@
         </figure>
       </div>
     </div>
+
+    <!-- Card Template -->
     <template id="card-template">
       <li class="card">
         <img src="" alt="" class="card__image" />
@@ -116,7 +145,7 @@
         </div>
       </li>
     </template>
-
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
