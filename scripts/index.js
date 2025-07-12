@@ -151,8 +151,13 @@ profileEditModalClose.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 addCardButton.addEventListener("click", () => {
-  addCardForm.reset();
   openPopup(addCardModal);
+  const inputList = Array.from(addCardForm.querySelectorAll(".modal__input"));
+  const buttonElement = addCardForm.querySelector(".modal__button");
+
+  toggleButtonState(inputList, buttonElement, {
+    inactiveButtonClass: "modal__button_disabled",
+  });
 });
 
 addCardCloseButton.addEventListener("click", () => {
