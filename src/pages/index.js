@@ -6,6 +6,7 @@ import Popup from "../../components/Popup.js";
 import PopupWithImage from "../../components/PopupWithImage.js";
 import PopupWithForm from "../../components/PopupWithForm.js";
 import UserInfo from "../../components/UserInfo.js";
+import Api from "../../components/Api.js";
 
 import { initialCards, validationConfig } from "../../utils/constants.js";
 
@@ -24,6 +25,16 @@ const profileDescriptionInput = document.querySelector(
 );
 const cardTitleInput = document.querySelector("#card-title-input");
 const cardLinkInput = document.querySelector("#card-link-input");
+
+//create API class
+const api = new Api({
+  baseURL: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "b3d22750-6505-4d6a-aa7e-af4edfb03942",
+
+    "Content-Type": "application/json",
+  },
+});
 
 // user info
 const userInfo = new UserInfo({
@@ -46,7 +57,6 @@ function createCard(data) {
 // card section
 const cardSection = new Section(
   {
-    items: initialCards,
     renderer: (item) => {
       const cardElement = createCard(item);
       cardSection.addItem(cardElement);
@@ -55,10 +65,12 @@ const cardSection = new Section(
   ".cards__list"
 );
 
-cardSection.renderItems();
-
 // profile form popup
 const profilePopup = new PopupWithForm("#profile-edit-modal", (data) => {
+  api.updateCurrentUser({
+    name: data.name,
+    about: data.about,
+  });
   userInfo.setUserInfo({
     name: data.name,
     about: data.about,
@@ -84,9 +96,14 @@ const profileFormValidator = new FormValidator(
   profileEditForm
 );
 profileFormValidator.enableValidation();
-
+// console.log("Sacha");
 const addCardFormValidator = new FormValidator(validationConfig, addCardForm);
 addCardFormValidator.enableValidation();
+
+api.getInitialData().then(([users, cards]) => {
+  userInfo.setUserInfo(users);
+  cardSection.renderItems(cards);
+});
 
 // open profie modal
 profileEditButton.addEventListener("click", () => {
