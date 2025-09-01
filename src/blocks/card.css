@@ -1,72 +1,79 @@
 .card {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  color: #000;
   border-radius: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   position: relative;
 }
 
 .card__image {
-  width: 282px;
   height: 282px;
-  border-radius: 10px 10px 0 0;
-}
-
-.card__image:hover {
+  width: 282px;
+  object-fit: cover;
   cursor: pointer;
 }
 
 .card__description {
   display: flex;
-  background-color: white;
-  color: black;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  align-items: center;
   justify-content: space-between;
-
-  border-radius: 0 0 10px 10px;
+  padding: 25px 20px;
 }
-.card__title {
+
+.card__name {
+  margin: 0;
+  font-family: "Inter", Arial, serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  max-width: 219px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 24px;
-  font-weight: 900;
-  margin: 0;
-  max-width: 220px;
 }
 
 .card__like-button {
-  background: transparent url(../images/like-button.svg);
+  background-color: transparent;
+  background-image: url(../images/Like.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
   width: 21px;
   height: 18px;
-  border: none;
-}
-
-.card__like-button_active {
-  background-image: url(../images/like_clicked.svg);
-}
-
-.card__like-button:hover {
-  opacity: 0.5;
+  align-self: center;
+  transition: opacity 0.5s linear;
   cursor: pointer;
 }
 
+.card__like-button:hover {
+  opacity: 0.6;
+}
+
+.card__like-button_liked {
+  background-image: url(../images/Active_Like.svg);
+}
+
 .card__delete-button {
-  background: transparent url(../images/delete_button.svg) center no-repeat;
-  background-size: 18px 19px;
+  border: 0;
+  padding: 0;
   width: 18px;
   height: 19px;
-  border: none;
+  background-color: transparent;
+  background-image: url(../images/Trash.svg);
+  background-size: cover;
+  background-position: center;
   position: absolute;
   top: 18px;
   right: 15px;
+  transition: opacity 0.5s linear;
   cursor: pointer;
 }
 
 .card__delete-button:hover {
   opacity: 0.6;
-  cursor: pointer;
 }
